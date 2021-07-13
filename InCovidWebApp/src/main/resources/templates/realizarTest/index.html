@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments.html :: headerfiles"></head>
+<title>Test Psicológico</title>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<div th:if="${param.testPsicologico}">
+    <div class="alert alert-info">Ha introducido mal un dato. Vuelva a intentarlo.</div>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <form action="#" th:action="@{/testPsicologico}" method="post" th:object="${testPsicologico}">
+            <h1 class="display-4">Bienvenido al test psicológico</h1>
+            <p class="lead">Con este test comprobaremos cómo te ha afectado la pandemia. Te daremos como resultado una valoración de tu estado con ayuda.</p>
+            <hr class="my-4">
+            <p>1. ¿Has pasado el confinamiento domiciliario solo o acompañado?</p>
+            <p>a) Solo <br /> b) Acompañado por familiares <br /> c) Acompañado por pareja <br /> d) Acompañado por amigos o compañeros de piso</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p1}" />
+
+            <p>2. ¿Has pasado el COVID19?</p>
+            <p>a) Sí <br /> b) No</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p2}" />
+
+            <p>3. En caso de respuesta afirmativa en la pregunta anterior, ¿ha sido ingresado como consecuencia del COVID19 o has pasado la enfermedad en casa?</p>
+            <p>a) Ingresado pero solo planta <br /> b) Ingresado en UCI <br /> c) En casa</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p3}" />
+
+            <p>4. ¿Has perdido a algún familiar?</p>
+            <p>a) Sí, a un conocido <br /> b) Sí, a un familiar <br /> c) Sí, a varios <br /> d) No</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p4}" />
+
+            <p>5. A nivel laboral, ¿se ha producido algún cambio?</p>
+            <p>a) Estaba/estoy en ERTE <br /> b) Un ERTE en mi empresa <br /> c) Me han despedido <br /> d) Todo sigue igual</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p5}" />
+
+            <p>6. A nivel económico, ¿se han producido grandes perdidas en tus ingresos?</p>
+            <p>a) Si, del 50% o más <br /> b) Si, aunque de menos de 50% <br /> c) No</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p6}" />
+
+            <p>7. Durante el confinamiento mucha gente a empezado a tomar sin prospecto medico medicamentos de tipo relajante, ¿es tu caso?</p>
+            <p>a) Si, las consumia diariamente <br /> b) Si, aunque solo las consumia en situaciones puntuales <br /> c) Si, aunque las consumi en muy reducidas veces <br /> d) No</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p7}" />
+
+            <p>8. Durante el confinamiento aumentaron exponencialmente los divorcios y rupturas de parejas ¿es alguno de estos tu caso?</p>
+            <p>a) No <br /> b) Si, estoy en proceso de divorcio <br /> c) Si, mi pareja y yo lo dejamos durante el confinamiento <br /> d) Si, aunque mi pareja y yo lo hemos dejado o nos hemos divorciado justo despues del confinamiento</p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p8}" />
+
+            <p>9. En caso de respuesta afirmartiva en la pregunta anterior, ¿fue de acuerdo mutuo?</p>
+            <p>a) Si <br />b) No,me dejo el/ella <br />c) No, lo deje yo <br /></p>
+            <input type="text" th:field="${testPsicologico.p9}" />
+
+            <p>10. Durante el confinamiento, ¿conoces de algún caso de intento de suicidio?</p>
+            <p>a) No <br />b) Si,algún conocido <br />c) Si, algún familiar <br />d) Si, yo mismo<br /></p>
+            <input type="text" th:field="${testPsicologico.p10}" />
+
+            <p>11. De estas cuatro opciones marca la que creas que habria sido la mejor opcion durante el confinamiento</p>
+            <p>a) Vivir en una casa en el campo rodeada de naturaleza <br />b) Vivir en una ciudad costera <br />c) Vivir en un pueblo pequeño cerca de la ciudad <br />d) Vivir en una ciudad grande<br /></p>
+            <input type="text" th:field="${testPsicologico.p11}" />
+
+            <p>12. ¿Han variado en algo tus habitos desde el confinamiento?</p>
+            <p>a) No <br />b) Si, ahora salgo menos a la calle, solo a lo que sea 100% necesario <br />c) Si, ahora salgo mas a la calle, sobretodo a hacer deporte<br />d) Si, ahora estoy todo el dia en la calle y solo vuelvo a casa a dormir<br /></p>
+            <input type="text" th:field="${testPsicologico.p12}" />
+
+            <p>13. ¿Has tenido algun hobby durante la cuarentena?</p>
+            <p>a) No <br />b) Si, cocinar, hacer pan y la reposteria <br />c) Si, hacer deporte<br />d) Si, pero otro de los que aparece aqui<br /></p>
+            <input type="text" th:field="${testPsicologico.p13}" />
+
+            <p>14. ¿Te sientes diferente tras la cuarentena?</p>
+            <p>a) No <br />b) Si, más triste<br />c) Si, más feliz<br /></p>
+            <input type="text" th:field="${testPsicologico.p14}" />
+
+            <p>15. Valora como te has sentido durante el confinamiento</p>
+            <p>a) Muy bien <br />b) Bien<br />c) Regular<br />d)Mal<br /></p>
+            <input type="text" th:field="${testPsicologico.p15}" />
+
+
+            <p>16. ¿Que sientes al pensar en todo lo que ha estado ocurriendo durante estos meses?</p>
+            <p>a) Rabia e impotencia <br />b) Alegría <br />c) Indiferencia <br />d) Culpabilidad <br /></p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p16}" />
+
+            <p>17. En cuanto a lo que se refiere a horas de sueño:</p>
+            <p>a) Ahora duermo más que durante la cuarentena. <br />b) Ahora duermo menos que en la cuarentena. <br />c) En la cuarentena no podía dormir.<br /></p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p17}" />
+
+            <p>18. Tras el paso de la cuarentena, ¿cómo te sientes?</p>
+            <p>a) Triste. <br />b) Indiferente. <br />c) Feliz. <br />d) Agobiado por la situación. <br /></p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p18}" />
+
+            <p>19. ¿Cual de estas escenas describe mejor tu cuarentena?</p>
+            <p>a) Todo el día del sofá a la cama sin saber que hacer. <br />b) Cada día buscaba una nueva actividad para hacer. <br />c) Siempre estaba aburrido y no sabía qué hacer. <br />d) No paraba de hacer cosas aunque no me sentía cómodo. <br /></p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p19}" />
+
+            <p>20. En general, ¿Cómo consideras tu vida tras el confinamiento?</p>
+            <p>a) Mejor que antes. <br />b) Peor que antes. <br />c) Igual que antes. <br /></p>
+            <label>Respuesta:</label>
+            <br>
+            <input type="text" th:field="${testPsicologico.p20}" />
+            <br>
+            <br>
+            <button type="submit">Enviar datos</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

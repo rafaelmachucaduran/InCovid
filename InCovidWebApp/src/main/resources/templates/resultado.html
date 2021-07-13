@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments.html :: headerfiles"></head>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<div class="container">
+    <h2>Tu resultado de vacunacion es el siguiente</h2>
+
+    <span>Comunidad seleccionada: </span><span th:object="${param}" th:text="${param.comunidad}"></span>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments.html :: headerfiles"></head>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+    <div class="container">
+        <h2>Pulsar sobre el boton para obtener la fecha aproximada de vacunacion</h2>
+
+        <form action="#" th:action="@{/tendencias}" method="post" th:object="${calculadoraTendencias}">
+            <p>Lista de comunidades:</p>
+            <p>1 Andalucia <br />2 Aragon <br />3 Asturias <br />4 Cantabria <br />5 Castilla-La Mancha <br />6 Castilla y Leon <br />
+            7 Catalu&ntilde;a <br />8 Ceuta <br />9 Extremadura <br />10 Galicia <br />11 Islas Baleares <br />12 Islas Canarias <br />
+            13 La Rioja <br />14 Madrid <br />15 Melilla <br />16 Murcia <br />17 Navarra <br />18 Pais Vasco <br />19 Valencia</p>
+            <label>Comunidad a la que pertenences:</label>
+            <br>
+            <input type="text" th:field="${calculadoraTendencias.comunidad}" /><br>
+            <br>
+            <label>Edad:</label>
+            <br>
+            <input type="text" th:field="${calculadoraTendencias.edad}" /><br>
+            <br>
+            <p>Lista de profesiones:<br />1 Prioritario <br />2 No prioritario <br />3 Desempleado <br />4 Estudiante <br />
+            <br>En caso de pertenecer a las fuerzas armadas, policia, bombero, personal sanitario, personal de educacion, etc,<br />
+            marque 1, en caso contrario marque cualquiera de las otras opciones.</p>
+            <label>Profesión:</label>
+            <br>
+            <input type="text" th:field="${calculadoraTendencias.profesion}" /><br>
+            <br>
+            <p>Selecciona la respuesta adecuada a tu caso, &iquest;padece usted alguna patologia?<br />1 Si <br />
+            2 No <br />3 No sabe, no contesta</p>
+            <label>Patologías:</label>
+            <br>
+            <input type="text" th:field="${calculadoraTendencias.patologia}" /><br>
+            <br>
+
+            <button type="submit">Enviar datos</button>
+            <br>
+            <br>
+        </form>
+
+    </div>
+</body>
+</html>
